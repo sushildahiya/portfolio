@@ -70,7 +70,7 @@ const Hero = () => {
     { icon: Github, href: personalInfo.github, label: 'GitHub' },
     { icon: Linkedin, href: personalInfo.linkedin, label: 'LinkedIn' },
     { icon: Mail, href: `mailto:${personalInfo.email}`, label: 'Email' },
-    { icon: Code, href: personalInfo.naukri, label: 'Naukri/Code360' }
+    { icon: ExternalLink, href: personalInfo.naukri, label: 'Naukri/Code360' }
   ];
 
   return (
