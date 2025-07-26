@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { ArrowDown, Github, Linkedin, Mail, MapPin, Phone, ExternalLink } from 'lucide-react';
 import { Button } from './ui/button';
 import { personalInfo } from '../data/mock';
+import FloatingCode from './3d-elements/FloatingCode';
+import HolographicCubes from './3d-elements/HolographicCubes';
 
 const Hero = () => {
   const canvasRef = useRef(null);
@@ -80,6 +82,20 @@ const Hero = () => {
         ref={canvasRef}
         className="absolute inset-0 opacity-20"
         style={{ pointerEvents: 'none' }}
+      />
+      
+      {/* 3D Elements */}
+      <FloatingCode 
+        className="absolute top-20 left-10 opacity-30" 
+        size="w-32 h-32 md:w-48 md:h-48" 
+      />
+      <HolographicCubes 
+        className="absolute top-32 right-10 opacity-25" 
+        size="w-40 h-40 md:w-60 md:h-60" 
+      />
+      <FloatingCode 
+        className="absolute bottom-20 right-20 opacity-20" 
+        size="w-24 h-24 md:w-36 md:h-36" 
       />
       
       {/* Gradient Overlay */}

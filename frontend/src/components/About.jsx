@@ -4,6 +4,7 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Code, Database, Cloud, Smartphone, Brain, Shield } from 'lucide-react';
 import { personalInfo } from '../data/mock';
+import CodeMatrix from './3d-elements/CodeMatrix';
 
 const About = () => {
   const ref = useRef(null);
@@ -65,8 +66,14 @@ const About = () => {
   };
 
   return (
-    <section id="about" ref={ref} className="py-20 bg-gradient-to-br from-gray-900 to-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" ref={ref} className="py-20 bg-gradient-to-br from-gray-900 to-black relative overflow-hidden">
+      {/* 3D Background Element */}
+      <CodeMatrix 
+        className="absolute top-10 right-10 opacity-10" 
+        size="w-80 h-80" 
+      />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
