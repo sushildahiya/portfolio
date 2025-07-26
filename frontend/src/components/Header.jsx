@@ -37,7 +37,7 @@ const Header = () => {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-black/90 backdrop-blur-lg border-b border-cyan-500/20' 
+          ? 'bg-black/90 backdrop-blur-lg border-b border-purple-500/20' 
           : 'bg-transparent'
       }`}
     >
@@ -49,10 +49,10 @@ const Header = () => {
             className="flex items-center space-x-2 cursor-pointer"
             onClick={() => scrollToSection('#hero')}
           >
-            <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
               <Code className="w-5 h-5 text-black" />
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+            <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
               SD
             </span>
           </motion.div>
@@ -67,7 +67,7 @@ const Header = () => {
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -2 }}
                 onClick={() => scrollToSection(item.href)}
-                className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 flex items-center space-x-1 group"
+                className="text-gray-300 hover:text-purple-400 transition-colors duration-300 flex items-center space-x-1 group"
               >
                 <item.icon className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                 <span>{item.name}</span>
@@ -79,7 +79,7 @@ const Header = () => {
           <div className="hidden md:block">
             <Button
               onClick={() => scrollToSection('#contact')}
-              className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white border-0"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0"
             >
               Get In Touch
             </Button>
@@ -91,7 +91,7 @@ const Header = () => {
               variant="ghost"
               size="sm"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-gray-300 hover:text-cyan-400"
+              className="text-gray-300 hover:text-purple-400"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </Button>
@@ -106,7 +106,7 @@ const Header = () => {
             opacity: isMobileMenuOpen ? 1 : 0 
           }}
           transition={{ duration: 0.3 }}
-          className="md:hidden overflow-hidden bg-black/95 backdrop-blur-lg border-t border-cyan-500/20"
+          className="md:hidden overflow-hidden bg-black/95 backdrop-blur-lg border-t border-purple-500/20"
         >
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navItems.map((item, index) => (
@@ -119,7 +119,7 @@ const Header = () => {
                 }}
                 transition={{ delay: index * 0.1 }}
                 onClick={() => scrollToSection(item.href)}
-                className="w-full text-left px-3 py-2 text-gray-300 hover:text-cyan-400 hover:bg-gray-800/50 rounded-md transition-colors flex items-center space-x-2"
+                className="w-full text-left px-3 py-2 text-gray-300 hover:text-purple-400 hover:bg-gray-800/50 rounded-md transition-colors flex items-center space-x-2"
               >
                 <item.icon className="w-4 h-4" />
                 <span>{item.name}</span>
@@ -128,7 +128,7 @@ const Header = () => {
             <div className="px-3 py-2">
               <Button
                 onClick={() => scrollToSection('#contact')}
-                className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white border-0"
+                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0"
               >
                 Get In Touch
               </Button>
