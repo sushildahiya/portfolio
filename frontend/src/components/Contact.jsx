@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Mail, Phone, MapPin, Github, Linkedin, Send, MessageCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Linkedin, Send, MessageCircle, ExternalLink } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
@@ -54,6 +54,12 @@ const Contact = () => {
       label: 'LinkedIn',
       href: personalInfo.linkedin,
       color: 'hover:text-blue-400'
+    },
+    {
+      icon: ExternalLink,
+      label: 'Naukri/Code360',
+      href: personalInfo.naukri,
+      color: 'hover:text-orange-400'
     }
   ];
 

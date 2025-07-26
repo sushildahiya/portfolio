@@ -46,7 +46,8 @@ const Header = () => {
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="flex items-center space-x-2"
+            className="flex items-center space-x-2 cursor-pointer"
+            onClick={() => scrollToSection('#hero')}
           >
             <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
               <Code className="w-5 h-5 text-black" />
@@ -98,38 +99,42 @@ const Header = () => {
         </div>
 
         {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-black/95 backdrop-blur-lg border-t border-cyan-500/20"
-          >
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {navItems.map((item, index) => (
-                <motion.button
-                  key={item.name}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  onClick={() => scrollToSection(item.href)}
-                  className="w-full text-left px-3 py-2 text-gray-300 hover:text-cyan-400 hover:bg-gray-800/50 rounded-md transition-colors flex items-center space-x-2"
-                >
-                  <item.icon className="w-4 h-4" />
-                  <span>{item.name}</span>
-                </motion.button>
-              ))}
-              <div className="px-3 py-2">
-                <Button
-                  onClick={() => scrollToSection('#contact')}
-                  className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white border-0"
-                >
-                  Get In Touch
-                </Button>
-              </div>
+        <motion.div
+          initial={false}
+          animate={{ 
+            height: isMobileMenuOpen ? 'auto' : 0,
+            opacity: isMobileMenuOpen ? 1 : 0 
+          }}
+          transition={{ duration: 0.3 }}
+          className="md:hidden overflow-hidden bg-black/95 backdrop-blur-lg border-t border-cyan-500/20"
+        >
+          <div className="px-2 pt-2 pb-3 space-y-1">
+            {navItems.map((item, index) => (
+              <motion.button
+                key={item.name}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ 
+                  opacity: isMobileMenuOpen ? 1 : 0, 
+                  x: isMobileMenuOpen ? 0 : -20 
+                }}
+                transition={{ delay: index * 0.1 }}
+                onClick={() => scrollToSection(item.href)}
+                className="w-full text-left px-3 py-2 text-gray-300 hover:text-cyan-400 hover:bg-gray-800/50 rounded-md transition-colors flex items-center space-x-2"
+              >
+                <item.icon className="w-4 h-4" />
+                <span>{item.name}</span>
+              </motion.button>
+            ))}
+            <div className="px-3 py-2">
+              <Button
+                onClick={() => scrollToSection('#contact')}
+                className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white border-0"
+              >
+                Get In Touch
+              </Button>
             </div>
-          </motion.div>
-        )}
+          </div>
+        </motion.div>
       </div>
     </motion.header>
   );
