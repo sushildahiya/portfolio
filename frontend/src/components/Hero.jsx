@@ -3,12 +3,13 @@ import { motion } from 'framer-motion';
 import { ArrowDown, Github, Linkedin, Mail, MapPin, Phone, ExternalLink } from 'lucide-react';
 import { Button } from './ui/button';
 import { personalInfo } from '../data/mock';
-import HolographicIDE from './3d-elements/HolographicIDE';
+import FloatingCode from './3d-elements/FloatingCode';
+import HolographicCubes from './3d-elements/HolographicCubes';
 
 const Hero = () => {
   const canvasRef = useRef(null);
 
-  // Matrix rain effect with blue/purple theme
+  // Matrix rain effect
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
@@ -31,8 +32,7 @@ const Hero = () => {
       ctx.fillStyle = 'rgba(0, 0, 0, 0.04)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       
-      // Blue/Purple matrix rain
-      ctx.fillStyle = '#8b5cf6';
+      ctx.fillStyle = '#00ff41';
       ctx.font = fontSize + 'px monospace';
       
       for (let i = 0; i < drops.length; i++) {
@@ -84,14 +84,22 @@ const Hero = () => {
         style={{ pointerEvents: 'none' }}
       />
       
-      {/* Holographic IDE Background */}
-      <HolographicIDE 
-        className="absolute inset-0 opacity-15" 
-        size="w-full h-full" 
+      {/* 3D Elements */}
+      <FloatingCode 
+        className="absolute top-20 left-10 opacity-30" 
+        size="w-32 h-32 md:w-48 md:h-48" 
+      />
+      <HolographicCubes 
+        className="absolute top-32 right-10 opacity-25" 
+        size="w-40 h-40 md:w-60 md:h-60" 
+      />
+      <FloatingCode 
+        className="absolute bottom-20 right-20 opacity-20" 
+        size="w-24 h-24 md:w-36 md:h-36" 
       />
       
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-transparent to-black/60" />
+      <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-transparent to-black/50" />
       
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -108,12 +116,12 @@ const Hero = () => {
             transition={{ duration: 1, delay: 0.2 }}
             className="mx-auto w-32 h-32 relative"
           >
-            <div className="w-full h-full bg-gradient-to-r from-blue-500 to-purple-600 rounded-full p-1">
+            <div className="w-full h-full bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full p-1">
               <div className="w-full h-full bg-black rounded-full flex items-center justify-center">
-                <span className="text-2xl font-bold text-blue-400">SD</span>
+                <span className="text-2xl font-bold text-cyan-400">SD</span>
               </div>
             </div>
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-lg opacity-30 animate-pulse" />
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-lg opacity-30 animate-pulse" />
           </motion.div>
 
           {/* Name and Title */}
@@ -124,7 +132,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-5xl md:text-7xl font-light text-white"
             >
-              <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                 {personalInfo.name}
               </span>
             </motion.h1>
@@ -185,9 +193,9 @@ const Hero = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, y: -5 }}
                 whileTap={{ scale: 0.9 }}
-                className="w-12 h-12 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full flex items-center justify-center hover:from-blue-500/40 hover:to-purple-500/40 transition-all duration-300 border border-blue-500/30"
+                className="w-12 h-12 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full flex items-center justify-center hover:from-cyan-500/40 hover:to-blue-500/40 transition-all duration-300 border border-cyan-500/30"
               >
-                <social.icon className="w-5 h-5 text-blue-400" />
+                <social.icon className="w-5 h-5 text-cyan-400" />
               </motion.a>
             ))}
           </motion.div>
@@ -201,14 +209,14 @@ const Hero = () => {
           >
             <Button
               onClick={scrollToAbout}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 text-lg border-0"
+              className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-3 text-lg border-0"
             >
               Explore My Work
             </Button>
             <Button
               onClick={() => window.open(personalInfo.github, '_blank')}
               variant="outline"
-              className="border-purple-500 text-purple-400 hover:bg-purple-500/10 px-8 py-3 text-lg"
+              className="border-cyan-500 text-cyan-400 hover:bg-cyan-500/10 px-8 py-3 text-lg"
             >
               View GitHub
             </Button>
@@ -226,7 +234,7 @@ const Hero = () => {
             onClick={scrollToAbout}
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="text-blue-400 hover:text-purple-400 transition-colors"
+            className="text-cyan-400 hover:text-cyan-300 transition-colors"
           >
             <ArrowDown className="w-6 h-6" />
           </motion.button>
