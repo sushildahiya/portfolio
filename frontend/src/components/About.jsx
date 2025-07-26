@@ -107,7 +107,7 @@ const About = () => {
                   className="flex flex-wrap gap-4"
                 >
                   <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/30 rounded-lg px-4 py-2">
-                    <span className="text-cyan-400 font-medium">2+ Years Experience</span>
+                    <span className="text-cyan-400 font-medium">4+ Years Experience</span>
                   </div>
                   <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/30 rounded-lg px-4 py-2">
                     <span className="text-cyan-400 font-medium">Full-Stack Developer</span>
