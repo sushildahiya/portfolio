@@ -9,7 +9,7 @@ export const personalInfo = {
   github: "https://github.com/sushildahiya",
   naukri: "https://www.naukri.com/code360/profile/Sushil_Dahiya",
   tagline: "Innovative, results-driven, and dynamic full-stack developer with expertise in React, Node.js, FastAPI, and Next.js",
-  description: "Skilled in building scalable applications, optimizing performance, securing data, and integrating AI/ML solutions. Successfully led payment gateway migrations, microservices enhancements, and cloud-based deployments while demonstrating exceptional problem-solving and debugging skills."
+  description: "With 4+ years of experience, skilled in building scalable applications, optimizing performance, securing data, and integrating AI/ML solutions. Successfully led payment gateway migrations, microservices enhancements, and cloud-based deployments while demonstrating exceptional problem-solving and debugging skills."
 };
 
 export const education = [
