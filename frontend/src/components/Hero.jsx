@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail, MapPin, Phone, ExternalLink } from 'lucide-react';
 import { Button } from './ui/button';
 import { personalInfo } from '../data/mock';
 
